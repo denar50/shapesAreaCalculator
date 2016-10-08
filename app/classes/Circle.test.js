@@ -22,41 +22,15 @@ describe('Circle', () => {
 		it('Should have a getStatistics method', () => {
 			expect(circle).to.have.property('getStatistics').that.is.a('function')
 		})
-	})
 
-	describe('calculateNewRandomArea', () => {
-		let randomDimension
-		let calculateNewRandomAreaPromise
-		before(() => {
-			sinon.stub(api, 'getDimension', () => {
-				return new Promise((resolve) => {
-					randomDimension = Math.random() * 10
-					resolve(randomDimension)
-				})
-			})
-		})
-
-		after(() => {
-			api.getDimension.restore()
-		})
-
-		beforeEach(() => {
-			calculateNewRandomAreaPromise = circle.calculateNewRandomArea()
-		})
-
-		it('Should calculate the area of a circle', () => {
-			calculateNewRandomAreaPromise.then((calculatedArea) => {
-				expect(calculatedArea).to.equal(Math.PI * Math.pow(randomDimension))
-			})
-		})
-
-		it('Should push this area to the calculated areas array', () => {
-			calculateNewRandomAreaPromise.then((calculatedArea) => {
-				const { calculatedAreas: { length, [length - 1]: lastCalculatedArea } } = cicle
-				expect(calculatedArea).to.equal(lastCalculatedArea)
-			})
+		it('Should have a calculateArea method', () => {
+			expect(circle).to.have.property('calculateArea').that.is.a('function')
 		})
 	})
 
-
+	describe('calculateArea', () => {
+		it('Should calculate the right area for the given dimensions', () => {
+			[5, 6, 7].forEach(dimension => expect(circle.calculateArea(dimension)).to.equal(Math.PI * Math.pow(dimension,2)))
+		})
+	})
 })

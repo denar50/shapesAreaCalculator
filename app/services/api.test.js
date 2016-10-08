@@ -15,7 +15,6 @@ describe('api', () => {
 
 		it('Should return an array containing numbers only', (done) => {
 			getDimensions(numberOfDimensions).then((arrayOfDimensions) => {
-				debugger
 				arrayOfDimensions.forEach(dimension => expect(dimension).to.be.a('number'))
 				done()
 			})
