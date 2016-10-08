@@ -9,11 +9,11 @@ const { querySelector } = domUtils
 const initApp = () => {
 	const shapes = []
 
-	shapes.push([Circle, querySelector(document, '.shape-statistics--circle')])
-	shapes.push([Square, querySelector(document, '.shape-statistics--square')])
-	shapes.push([Triangle, querySelector(document, '.shape-statistics--triangle')])
+	shapes.push([Circle, '.shape-statistics--circle'])
+	shapes.push([Square, '.shape-statistics--square'])
+	shapes.push([Triangle, '.shape-statistics--triangle'])
 
-	shapes.forEach(([ShapeClass, domElement]) => new ShapeDOMInitializer(ShapeClass, domElement))
+	shapes.forEach(([ShapeClass, selector]) => new ShapeDOMInitializer(ShapeClass, querySelector(document, selector)))
 }
 
 window.onload = initApp
