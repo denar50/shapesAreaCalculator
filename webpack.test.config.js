@@ -29,7 +29,7 @@ module.exports = {
 		alias: {
 			'sinon': 'sinon/pkg/sinon',
 			services: path.resolve('./app/services'),
-			classes: path.resolve('./app/classes'),
+			classes: path.resolve('./app/classes')
 		}
   }
 };

@@ -18,17 +18,17 @@ var getDistanceAPI = function (callback) {
 
 
 
-const getDimension = (resolve, reject) => {
-	return getDistanceAPI(({distance}) => {
+const getDimension = promesifier((resolve, reject) => {
+	getDistanceAPI(({distance}) => {
 		console.log('API returns', JSON.stringify(distance))
 		resolve(distance)
 	})
-}
+})
 
 const getDimensions = (numberOfDimensions, resolve, reject) => {
 	const promises = []
 	for(let i = 0; i < numberOfDimensions; i++) {
-		promises.push(api.getDimension())
+		promises.push(getDimension())
 	}
 	const unifiedPromise = Promise.all(promises)
 	unifiedPromise.then(resolve)
@@ -36,6 +36,5 @@ const getDimensions = (numberOfDimensions, resolve, reject) => {
 }
 
 api.getDimensions = promesifier(getDimensions)
-api.getDimension = promesifier(getDimension)
 
 export default api
