@@ -5,7 +5,7 @@ import { promesifier } from 'services/utils'
 export default class Circle extends Shape {
 	constructor() {
 		super()
-		this.calculateNewRandomArea = promesifier(this.calculateNewRandomArea)
+		this.calculateNewRandomArea = promesifier(this.calculateNewRandomArea, this)
 	}
 
 	calculateNewRandomArea(resolve, reject) {

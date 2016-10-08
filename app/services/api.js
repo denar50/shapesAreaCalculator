@@ -20,7 +20,7 @@ var getDistanceAPI = function (callback) {
 
 const getDimension = (resolve, reject) => {
 	return getDistanceAPI(({distance}) => {
-
+		console.log('API returns', JSON.stringify(distance))
 		resolve(distance)
 	})
 }

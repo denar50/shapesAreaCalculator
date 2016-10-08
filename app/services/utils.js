@@ -10,5 +10,11 @@ export const promesifier = (theFunction, thisValue = null) => {
 
 export const getAverageNumber = (numbersArray) => {
 	const { length } = numbersArray
-	return numbersArray.reduce((sum, currentNumber) => sum + currentNumber, 0)
+	if(length <= 0) return 0
+	return numbersArray.reduce((sum, currentNumber) => sum + currentNumber, 0) / length
+}
+
+export const truncateNumber = (number, decimals = 1) => {
+	const regexp = new RegExp(`^\\d+(?:\\.\\d{0,${decimals}})?`)
+	return Number(number.toString().match(regexp))
 }

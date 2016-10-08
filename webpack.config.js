@@ -6,13 +6,13 @@ module.exports = {
 		filename: './app/dist/bundle.js'
 	},
 	module: {
-		preLoaders: [
+		/*preLoaders: [
       {
         test: /\.js?$/,
         loaders: ['jshint'],
 				exclude: '/node_modules'
       }
-    ],
+    ],*/
 		loaders: [
       {
         test: /\.js$/,
@@ -24,13 +24,13 @@ module.exports = {
       }
     ]
   },
-	postLoaders: [
+	/*postLoaders: [
 		{
 				test: /\.js$/, // include .js files
 				exclude: /node_modules/, // exclude any and all files in the node_modules folder
 				loader: "jshint-loader",
 		}
-	],
+	],*/
 	jshint: {
 		esversion: 6,
 		asi: true
