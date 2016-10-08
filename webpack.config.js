@@ -1,11 +1,18 @@
 var path = require('path')
 
 module.exports = {
-	entry: ['mocha!./tests/index.js'],
+	entry: ['./app/app.js'],
 	output: {
-		filename: './tests/testBundle.js',
+		filename: './app/dist/bundle.js'
 	},
 	module: {
+		preLoaders: [
+      {
+        test: /\.js?$/,
+        loaders: ['jshint'],
+				exclude: '/node_modules'
+      }
+    ],
 		loaders: [
       {
         test: /\.js$/,
@@ -15,11 +22,15 @@ module.exports = {
           presets: ['es2015']
         }
       }
-    ],
-		noParse: [
-			/node_modules\/sinon\//
-		]
+    ]
   },
+	postLoaders: [
+		{
+				test: /\.js$/, // include .js files
+				exclude: /node_modules/, // exclude any and all files in the node_modules folder
+				loader: "jshint-loader",
+		}
+	],
 	jshint: {
 		esversion: 6,
 		asi: true
@@ -27,7 +38,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', ''],
 		alias: {
-			'sinon': 'sinon/pkg/sinon',
 			services: path.resolve('./app/services'),
 			classes: path.resolve('./app/classes'),
 		}
