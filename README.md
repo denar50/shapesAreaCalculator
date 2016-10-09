@@ -29,3 +29,9 @@ Approach
 A `Shape` class was created to contain all the common logic of all shapes. Then a class that extends `Shape` was created for each shape: `Square`, `Circle` and `Triangle`. Adding a new shape to the application will just imply creating another class that extends `Shape`.
 
 A `ShapeDOMInitializer` class was created to connect a `Shape` with the DOM.
+
+Unit testing
+----------------
+
+All the unit tests files are within the source code in the same directory of what they are testing.
+Although there is a tests folder at the root level, all this folder contains are the index file I use to bundle all tests with Mocha and the HTML file I use to visualize them in the browser.
