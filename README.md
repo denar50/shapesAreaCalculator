@@ -13,7 +13,7 @@ Once downloaded please run:
 - Then go to [http://localhost:8080](http://localhost:8080) to see the page
 
 If you want to see the unit tests in the browser, please run:
--`npm run tests`
+- `npm run tests`
 
 About the app
 -------------------------
