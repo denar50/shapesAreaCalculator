@@ -8,8 +8,8 @@ Instructions
 -----------------
 
 Once downloaded please run:
-- ` npm install`
-- `npm dev`
+- `npm install`
+- `npm run dev`
 - Then go to [http://localhost:8080](http://localhost:8080) to see the page
 
 If you want to see the unit tests in the browser, please run:
