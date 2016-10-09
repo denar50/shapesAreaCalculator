@@ -1,6 +1,6 @@
 {
   "scripts": {
-		"dev": "webpack && webpack-dev-server --watch --inline ",
+    "dev": "webpack && webpack-dev-server --watch --inline --host 0.0.0.0",
     "tests": "webpack-dev-server --content-base tests --config webpack.test.config.js --watch --inline --port 8999"
   },
   "name": "shapes-area-calculator",
@@ -29,5 +29,8 @@
     "sinon": "^1.17.6",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "normalize.css": "^5.0.0"
   }
 }

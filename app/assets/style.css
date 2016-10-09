@@ -1,0 +1,65 @@
+@import '../../node_modules/normalize.css/normalize.css';
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 300px;
+	min-height: 1000px;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	width: 100%;
+	height: 100%;
+	max-width: 1000px;
+}
+
+p {
+	margin: 0
+}
+
+.shape-statistics {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 300px;
+	height: 300px;
+	position: relative;
+	margin: 20px;
+}
+
+.shape-statistics::before {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	content: '';
+	top: 0;
+	left:0;
+	z-index: -1;
+}
+
+.shape-statistics--circle::before {
+	background-color: rgba(233, 177, 15, .4);
+	border-radius: 50%;
+}
+
+.shape-statistics--triangle::before {
+	background-color: transparent;
+	height: 0;
+	width: 0;
+	border-bottom: 300px solid rgba(15, 233, 177, .4);
+	border-left: 150px solid transparent;
+	border-right: 150px solid transparent;
+}
+
+.shape-statistics--square::before {
+	background-color: rgba(177, 15, 233, .4);
+}
